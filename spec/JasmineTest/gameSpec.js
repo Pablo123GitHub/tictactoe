@@ -80,6 +80,16 @@ describe("Player", function() {
 
     });
 
+    it("returns true when O wins ", function() {
+
+      game._gameScoreO.push(1);
+      game._gameScoreO.push(2);
+      game._gameScoreO.push(3);
+
+      expect(game.checkWinO()).toBe(true);
+
+    });
+
   });
 
 });
