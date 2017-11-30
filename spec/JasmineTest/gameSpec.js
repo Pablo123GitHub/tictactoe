@@ -15,8 +15,6 @@ describe("Player", function() {
 
   });
 
-  it("should draw a pipe ", function() {
-    expect(game.drawLine()).toBe("|");
-  });
+
 
 });
