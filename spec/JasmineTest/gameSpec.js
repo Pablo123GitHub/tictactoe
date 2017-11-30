@@ -15,32 +15,40 @@ describe("Player", function() {
 
   });
 
-  it("should return X", function() {
-    expect(game.addCross()).toEqual("X");
+  describe("playing in turn", function() {
+
+    it("should return X", function() {
+      expect(game.addCross()).toEqual("X");
+    });
+
+    it("should return O", function() {
+      expect(game.addNought()).toEqual("O");
+    });
+
+    it("adds X when game starts the play", function() {
+      expect(game.play()).toEqual("X");
+    });
+
+    it("adds O after X was played", function() {
+      game.play();
+      expect(game.play()).toEqual("O");
+    });
+
+    it("adds X after O was played", function() {
+      game.play();
+      game.play();
+      expect(game.play()).toEqual("X");
+    });
   });
 
-  it("should return O", function() {
-    expect(game.addNought()).toEqual("O");
+  describe("determining the winner", function() {
+
+
+    it("returns false when we check the score for crosses score before the game ", function() {
+
+      expect(game.checkWinX()).toBe(false);
+
+    });
   });
-
-  it("adds X when game starts the play", function() {
-    expect(game.play()).toEqual("X");
-  });
-
-  it("adds O after X was played", function() {
-    game.play();
-    expect(game.play()).toEqual("O");
-  });
-
-  it("adds X after O was played", function() {
-    game.play();
-    game.play();
-    expect(game.play()).toEqual("X");
-  });
-
-
-
-
-
 
 });
