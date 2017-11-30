@@ -15,6 +15,8 @@ describe("Player", function() {
 
   });
 
-
+  it("should return X", function() {
+    expect(game.addCross()).toEqual("X")
+  });
 
 });
