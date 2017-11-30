@@ -16,7 +16,17 @@ describe("Player", function() {
   });
 
   it("should return X", function() {
-    expect(game.addCross()).toEqual("X")
+    expect(game.addCross()).toEqual("X");
   });
+
+  it("should return O", function() {
+    expect(game.addNought()).toEqual("O");
+  });
+
+  it("adds X when game starts the play", function() {
+    expect(game.play()).toEqual("X");
+  });
+
+
 
 });
