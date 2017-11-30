@@ -27,6 +27,12 @@ describe("Player", function() {
     expect(game.play()).toEqual("X");
   });
 
+  it("adds O after X was played", function() {
+    game.play();
+    expect(game.play()).toEqual("O");
+  });
+
+
 
 
 });
