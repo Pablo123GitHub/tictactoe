@@ -65,8 +65,18 @@ describe("Player", function() {
       game._gameScoreX.push(1);
       game._gameScoreX.push(2);
       game._gameScoreX.push(3);
-      
+
       expect(game.checkWinX()).toBe(true);
+
+    });
+
+    it("returns false when X is not winning ", function() {
+
+      game._gameScoreX.push(1);
+      game._gameScoreX.push(2);
+      game._gameScoreX.push(4);
+
+      expect(game.checkWinX()).toBe(false);
 
     });
 
