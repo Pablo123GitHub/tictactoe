@@ -43,12 +43,33 @@ describe("Player", function() {
 
   describe("determining the winner", function() {
 
+    // beforeEach(function() {
+    //   game = {
+    //     _gameScoreX: function() {
+    //       return bar;
+    //     }
+    //   };
+    //   spyOn(game, "_gameScoreX").and.returnValue([1,2,3]);
+    // });
+
 
     it("returns false when we check the score for crosses score before the game ", function() {
+
 
       expect(game.checkWinX()).toBe(false);
 
     });
+
+    it("returns true when X wins ", function() {
+
+      game._gameScoreX.push(1);
+      game._gameScoreX.push(2);
+      game._gameScoreX.push(3);
+      
+      expect(game.checkWinX()).toBe(true);
+
+    });
+
   });
 
 });
