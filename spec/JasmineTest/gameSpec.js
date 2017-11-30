@@ -70,13 +70,13 @@ describe("Player", function() {
 
     });
 
-    it("returns false when X is not winning ", function() {
+    it("returns false when O is not winning ", function() {
 
-      game._gameScoreX.push(1);
-      game._gameScoreX.push(2);
-      game._gameScoreX.push(4);
+      game._gameScoreO.push(1);
+      game._gameScoreO.push(2);
+      game._gameScoreO.push(4);
 
-      expect(game.checkWinX()).toBe(false);
+      expect(game.checkWinO()).toBe(false);
 
     });
 
@@ -87,6 +87,16 @@ describe("Player", function() {
       game._gameScoreO.push(3);
 
       expect(game.checkWinO()).toBe(true);
+
+    });
+
+    it("returns false when X is not winning ", function() {
+
+      game._gameScoreX.push(1);
+      game._gameScoreX.push(2);
+      game._gameScoreX.push(4);
+
+      expect(game.checkWinX()).toBe(false);
 
     });
 
