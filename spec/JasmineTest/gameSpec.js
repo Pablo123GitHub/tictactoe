@@ -1,4 +1,4 @@
-describe("Player", function() {
+describe("Game", function() {
 
   var Game = require('../../lib/js/game');
   var game;
@@ -55,9 +55,9 @@ describe("Player", function() {
 
     it("returns true when X wins ", function() {
 
-      game._gameScoreX.push(1);
-      game._gameScoreX.push(2);
-      game._gameScoreX.push(3);
+      game._gameScoreX.push("#1");
+      game._gameScoreX.push("#2");
+      game._gameScoreX.push("#3");
 
       expect(game.checkWinX()).toBe(true);
 
@@ -65,9 +65,9 @@ describe("Player", function() {
 
     it("returns false when O is not winning ", function() {
 
-      game._gameScoreO.push(1);
-      game._gameScoreO.push(2);
-      game._gameScoreO.push(4);
+      game._gameScoreO.push("#1");
+      game._gameScoreO.push("#2");
+      game._gameScoreO.push("#4");
 
       expect(game.checkWinO()).toBe(false);
 
@@ -75,9 +75,9 @@ describe("Player", function() {
 
     it("returns true when O wins ", function() {
 
-      game._gameScoreO.push(1);
-      game._gameScoreO.push(2);
-      game._gameScoreO.push(3);
+      game._gameScoreO.push("#1");
+      game._gameScoreO.push("#2");
+      game._gameScoreO.push("#3");
 
       expect(game.checkWinO()).toBe(true);
 
