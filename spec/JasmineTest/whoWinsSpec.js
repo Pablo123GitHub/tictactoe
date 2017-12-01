@@ -14,4 +14,8 @@ describe("WhoWins", function() {
           expect(whoWins.declareWinner(gameScoreArrWins)).toEqual(true);
         });
 
+        it("return false when Lose ", function() {
+          expect(whoWins.declareWinner(gameScoreArrLoses)).toEqual(false);
+        });
+
       });
