@@ -1,10 +1,12 @@
 describe("Game", function() {
 
   var Game = require('../../lib/js/game');
-  var game;
+  var game, whoWinsMock;
 
   beforeEach(function() {
-    game = new Game();
+    whoWinsMock = jasmine.createSpyObj("whowinsClass", ["declareWinner"]);
+    game = new Game(whoWinsMock);
+
   });
 
   describe("::new", function() {
@@ -55,47 +57,29 @@ describe("Game", function() {
 
     it("returns true when X wins ", function() {
 
-      game._gameScoreX.push("#1");
-      game._gameScoreX.push("#2");
-      game._gameScoreX.push("#3");
-
+      whoWinsMock.declareWinner.and.returnValue(true);
       expect(game.checkWinX()).toBe(true);
 
     });
 
     it("returns false when O is not winning ", function() {
 
-      game._gameScoreO.push("#1");
-      game._gameScoreO.push("#2");
-      game._gameScoreO.push("#4");
-
+      whoWinsMock.declareWinner.and.returnValue(false);
       expect(game.checkWinO()).toBe(false);
 
     });
 
     it("returns true when O wins ", function() {
 
-      game._gameScoreO.push("#1");
-      game._gameScoreO.push("#2");
-      game._gameScoreO.push("#3");
-    
-
+      whoWinsMock.declareWinner.and.returnValue(true);
       expect(game.checkWinO()).toBe(true);
 
     });
 
     it("returns false when X is not winning ", function() {
 
-      game._gameScoreO.push("#1");
-      game._gameScoreO.push("#2");
-      game._gameScoreO.push("#4");
-
+      whoWinsMock.declareWinner.and.returnValue(false);
       expect(game.checkWinX()).toBe(false);
-
     });
-
-
-
   });
-
 });
